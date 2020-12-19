@@ -1,0 +1,189 @@
+/*
+    Desarrollado por:
+    Grizzly Systems 
+*/
+/* --- Importacion de fuentes --- */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap');
+/* --- Declaración de variables para tipografia y colores --- */
+:root{
+    --FontLogo: 'Pacifico';
+    --Fonttxt:'Quicksand';
+    --FontColorWhite: #ffffff;
+    --ColorPrincipal: #154360;
+    --ColorBackground: #EAF2F8;
+}
+/* --- Estilos globales --- */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--Fonttxt);
+}
+Body{
+    background: var(--ColorBackground);
+}
+a{
+    color: var(--FontColorWhite);
+    text-decoration: none;
+}
+/* --- Menú --- */
+.elipse_menu2{          
+    position: absolute;
+    width: 488px;
+    height: 183px;
+    border-radius: 100%;
+    right: 0px;
+    top: -100px;
+    background: #154360;
+}
+.menu{
+    position: absolute;
+    top: 5px;
+    right: 70px;
+    border-radius: 50%;
+    background: var(--ColorPrincipal);
+    z-index: 1;
+}
+    .menu ul li{
+        list-style: none;
+        display: inline-block;
+        padding: 10px;       
+    }
+/* ---Contenedor del inicio donde se encuentra el logo de la empresa --- */
+.container_inicio{
+    display: flex;
+}
+    .elipse_1{
+        position: absolute;
+        border-radius: 50%;
+        width: 503px;
+        height: 392px;
+        left: -92px;
+        top: -88px;
+        z-index: 0;
+        background: var(--ColorPrincipal);
+    }
+    .elipse_2{
+        position: absolute;
+        border-radius: 50%;
+        width: 633px;
+        height: 476px;
+        left: -177px;
+        top: 103px;     
+        z-index: 0;   
+        background:  var(--ColorPrincipal);
+    }
+    .elipse_3{
+        position: absolute;
+        border-radius: 100%;
+        width: 494px;
+        height: 407px;
+        left: -177px;
+        top: 323px;
+        z-index: 0;        
+        background: var(--ColorPrincipal);
+    }
+    .img_logo{
+        position: absolute;
+        background: var(--ColorPrincipal);
+        z-index: 1;
+        top: 15vh;
+        left: 25px;
+        width: 350px;
+        height: 360px;
+    }
+    .text_logo{
+        background: var(--ColorPrincipal) ;
+        position: absolute;
+        font-size: 50px;
+        color: white;
+        top: 50vh;
+        left: 20px;
+        font-family: var(--FontLogo);
+        z-index: 2;
+    }
+
+    .container_logo{
+        width: 30%;
+        height: 100vh;
+    }
+/* ---Contenedor que cuenta con la informacion del inicio del sitio ---*/
+.container_informationInicio{
+    display: flex;
+    width: 70%;
+    height: 100vh;
+}
+    .txt_start{
+        display: flex;
+        width: 80%;
+        height: 200px;
+        flex-direction: column;
+        margin-top: 20vh;
+        margin-left: 15vh;
+        text-align: center;
+    }
+    .txt_start h1{
+        font-size: 80px;
+    }
+    .txt_start p{
+        font-size: 20px;
+    }
+    .social_media{
+        margin-top: 10px;
+        margin-right: 40px;
+        display: flex;
+        justify-content: flex-end;        
+    }
+        .icon_fb,
+        .icon_wp,
+        .icon_ig,
+        .icon_mail{
+            font-size: 40px;
+            margin: 5px;
+            padding: 10px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--ColorPrincipal);
+            line-height: 50px;
+            transition: .3s;
+            transform: translate(0,0px);
+            box-shadow: 0px 7px 5px rgba(0,0,0,.5);
+        }
+        /* --- Animación de botones ---  */
+        .icon_fb:hover, 
+        .icon_wp:hover, 
+        .icon_ig:hover, 
+        .icon_mail:hover{        
+            color: #000;
+            transform: rotate(0deg) skew(0deg) translate(0,-10px);
+        }
+        .icon_fb:hover{
+            color: #0B84EE;
+        }
+        .icon_wp:hover{
+            color: #0DC143;
+        }
+        .icon_ig:hover{
+            color: violet;
+        }
+        .icon_mail:hover{
+            color: red;
+        }
+/* --- Boton de contáctanos --- */
+.btn_contact{
+    margin-top: 80px;
+    margin-left: 100px;
+    border-radius: 50px;
+    width: 80%;
+    padding: 20px;
+    background: var(--ColorPrincipal);
+    line-height: 50px;
+    transition: .3s;
+    transform: translate(0,0px);
+    box-shadow: 0px 7px 5px rgba(0,0,0,.5);
+    font-size: 20px;
+}
+    .btn_contact:hover{
+        transform: rotate(0deg) skew(0deg) translate(0,-10px);
+    }
