@@ -2,6 +2,7 @@
     Desarrollado por:
     Grizzly Systems 
 */
+
 /* --- Importacion de fuentes --- */
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap');
 /* --- Declaración de variables para tipografia y colores --- */
@@ -11,6 +12,8 @@
     --FontColorWhite: #ffffff;
     --ColorPrincipal: #154360;
     --ColorBackground: #EAF2F8;
+    --Sombras: 0px 7px 5px rgba(0,0,0,.5); 
+    --animacion-botones: rotate(0deg) skew(0deg) translate(0,-10px);
 }
 /* --- Estilos globales --- */
 *{
@@ -26,35 +29,112 @@ a{
     color: var(--FontColorWhite);
     text-decoration: none;
 }
+.logo{
+    font-family: var(--FontLogo);
+    color: var(--FontColorWhite);
+}
 /* --- Menú --- */
-.elipse_menu2,
 .menu{
     position: absolute;
+    top: 2%;
+    right: 2%;
+    width: 500px;
+    height: 8%;
     background: var(--ColorPrincipal);
+    border-radius: 20px;
+    box-shadow: var(--Sombras); 
+    padding: 0;
+    transition: all .2s;
+}
+.logo_small{
+    position: absolute;
     position: fixed;
-    z-index: 2;
+    z-index: 4;
+    left: -200px;
 }
-.elipse_menu2{          
-    width: 600px;
-    height: 75px;
-    border-radius: 100% 0% 51% 49% / 0% 52% 48% 100% ;
-    top: 0 px;
-    right: 0px;
-}
-.menu{
-    top: 5px;
-    right: 70px;
-    border-radius: 50px;
-    z-index: 3;
-}
+
     .menu ul li{
-        list-style: none;
+        padding: 20px 20px 10px 30px;
         display: inline-block;
-        padding: 15px;       
+        list-style: none;
     }
+    
+body.menu_fixed .menu{
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 0;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 8%;
+    border-radius: 0px;
+    transition: all .2s;
+    z-index: 3;
+    background: var(--ColorPrincipal);
+    opacity: 1;
+}
+body.menu_fixed .logo_small{
+    top: 0px;
+    left: 60px;
+    margin: 15px 0 0 0;
+}
     .menu ul li a:hover{
-        color: #000;
+        border-bottom: 2px solid;
+        
     }
+/* ---- Menú responsive ---- */
+.menu_responsive{
+    width: 100%;
+    display: hide;
+}
+.btn_menu {
+    display: none;
+    top: 12px;
+    right: 30px;    
+}
+#hamburguer_menu{
+    width: 24px;
+    height: 18px;
+    position: fixed;
+    cursor: pointer;
+    top: 20px;
+    right: 20px;
+}
+#hamburguer_menu span{
+    position: absolute;
+    left: 0;
+    height: 2px;
+    width: 100%;    
+    opacity: 1;
+    background: whitesmoke;
+    border-radius: 2px;
+    pointer-events:  none;    
+    transform: rotate(0deg);
+    transition: .2s ease;
+}
+#hamburguer_menu span:nth-child(1){
+    top: 0px;
+}
+#hamburguer_menu span:nth-child(2), 
+#hamburguer_menu span:nth-child(3){
+    top: 50%;
+}
+#hamburguer_menu span:nth-child(4){
+    top: 100%;
+}
+#hamburguer_menu.open span:nth-child(1),
+#hamburguer_menu.open span:nth-child(4) {
+    top: 50%;
+    width: 0%;
+    left: 50%;    
+}
+#hamburguer_menu.open span:nth-child(2){
+    transform: rotate(45deg);
+}
+#hamburguer_menu.open span:nth-child(3){
+    transform: rotate(-45deg);
+}
 /* ---Contenedor del inicio donde se encuentra el logo de la empresa --- */
 .container_inicio{
     display: flex;
@@ -77,44 +157,43 @@ a{
         top: 0;
         left: 0;
         width: 100px;
-        height: 60vh;
+        height: 60%;
+        border: 1px solid;
     }
     .elipse_1{
         top: 0;
         left: 0;
-        width: 350px;
-        height: 300px;
+        width: 25%;
+        height: 40%;
         border-radius: 73% 27% 40% 60% / 0% 49% 51% 100% ;
     }
     .elipse_2{
-        top: 200px;
+        top: 20%;
         left: 0;
-        width: 400px;
-        height: 300px;
+        width: 30%;
+        height: 50%;
         border-radius: 68% 32% 49% 51% / 36% 47% 53% 64% ;
     }
     .elipse_3{
-        top: 350px;
+        top: 50%;
         left: 0px;
-        width: 300px;
-        height: 300px;
+        width: 20%;
+        height: 40%;
         border-radius: 64% 36% 100% 0% / 0% 49% 51% 100% ;
     }
-    
     .img_logo{
         z-index: 1;
-        top: 20vh;
-        left: 25px;
+        top: 20%;
+        left: 4%;
         border-radius: 50px;
-        width: 300px;
-        height: 300px;
+        width: 20%;
+        height: 30%;
     }
     .text_logo{
-        font-size: 45px;
-        color: var(--FontColorWhite);
-        top: 55vh;
-        left: 20px;
-        font-family: var(--FontLogo);
+        font-size: 2.5rem;
+        top: 50%;
+        border-radius: 30%;
+        left: 4%;
         z-index: 2;
     }
 /* ---Contenedor que cuenta con la informacion del inicio del sitio ---*/
@@ -158,7 +237,7 @@ a{
             line-height: 50px;
             transition: .3s;
             transform: translate(0,0px);
-            box-shadow: 0px 7px 5px rgba(0,0,0,.5);
+            box-shadow: var(--Sombras);
         }
         /* --- Animación de botones ---  */
         .icon_fb:hover, 
@@ -166,7 +245,7 @@ a{
         .icon_ig:hover, 
         .icon_mail:hover{        
             color: #000;
-            transform: rotate(0deg) skew(0deg) translate(0,-10px);
+            transform: var(--animacion-botones);
         }
         .icon_fb:hover{
             color: #0B84EE;
@@ -191,30 +270,74 @@ a{
     line-height: 50px;
     transition: .3s;
     transform: translate(0,0px);
-    box-shadow: 0px 7px 5px rgba(0,0,0,.5);
+    box-shadow: var(--Sombras);
     font-size: 20px;
 }
     .btn_contact:hover{
-        transform: rotate(0deg) skew(0deg) translate(0,-10px);
+        transform: var(--animacion-botones);
     }
 /* --- Apartado de servicios --- */
+
 .container_services{
+    display: flex;
+    flex-direction: column;
     width: 100%;
-    background: var(--ColorBackground);
-    height: 100%;
-    border: 1px solid;
+    height: 100vh;
+}
+.txt_services{
+    margin-top: 6%;
+    text-align: center;
+}
+.first_line_cc, .second_line_cc{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 40%;
+}
+.card{
+    width: 25%;
+    height: 70%;
+    background: var(--ColorPrincipal);
+    box-shadow: var(--Sombras);
+    border-radius: 20px;
+    transition: all .4s ease-in-out;
+    overflow: hidden;
+}
+.img_card{
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+    height: 80%;
+}
+.txt_card, .info{
+    color: white;
+}
+.txt_card{
+    text-align: center;
+}
+.info{
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    bottom: 100%;
+    height: inherit;
+    width: 100%;
+    background: var(--ColorPrincipal);
+    padding: 10px;
+}
+.card:hover{
+    cursor: pointer;
+    transform: var(--animacion-botones);
+}
+.card:hover .info{
+    transition: ease .5s ;
+    opacity: .8;
+    bottom: -30%;
 }
 /* --- Apartado de Portafolio --- */
-.container_portfolio{
-    width: 100%;
-    background: var(--ColorBackground);
-    height: 100%;
-    border: 1px solid;
-}
 /* --- Apartado de Contáctanos --- */
-.container_contact{
-    width: 100%;
-    background: var(--ColorBackground);
-    height: 100%;
-    border: 1px solid;
-}
+
+
+/* 
+----RESPONSIVE----
+ */
