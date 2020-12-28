@@ -5,7 +5,7 @@
 
 /* --- Importacion de fuentes --- */
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap');
-/* --- Declaración de variables para tipografia y colores --- */
+/* --- Declaración de variables para tipografia, colores, sombras y animaciones --- */
 :root{
     --FontLogo: 'Pacifico';
     --Fonttxt:'Quicksand';
@@ -158,7 +158,6 @@ body.menu_fixed .logo_small{
         left: 0;
         width: 100px;
         height: 60%;
-        border: 1px solid;
     }
     .elipse_1{
         top: 0;
@@ -190,7 +189,7 @@ body.menu_fixed .logo_small{
         height: 30%;
     }
     .text_logo{
-        font-size: 2.5rem;
+        font-size: 2.5vw;
         top: 50%;
         border-radius: 30%;
         left: 4%;
@@ -277,7 +276,6 @@ body.menu_fixed .logo_small{
         transform: var(--animacion-botones);
     }
 /* --- Apartado de servicios --- */
-
 .container_services{
     display: flex;
     flex-direction: column;
@@ -297,7 +295,7 @@ body.menu_fixed .logo_small{
 }
 .card{
     width: 25%;
-    height: 70%;
+    height: 90%;
     background: var(--ColorPrincipal);
     box-shadow: var(--Sombras);
     border-radius: 20px;
@@ -331,13 +329,50 @@ body.menu_fixed .logo_small{
 }
 .card:hover .info{
     transition: ease .5s ;
-    opacity: .8;
-    bottom: -30%;
+    opacity: .95 ;
+    bottom: -50%;
 }
 /* --- Apartado de Portafolio --- */
+.container_portfolio{
+    display: flex;
+    height: 80vh;
+    width: 100%;
+    justify-content: space-around;
+    padding: 3vh;
+}
+    .card_port{
+        margin-top: 20px;
+        display: flex;
+        width: 40%;
+        height: 90%;
+        background: var(--ColorPrincipal);
+        flex-direction: column;
+        box-shadow: var(--Sombras);
+        border-radius: 20px;
+        color: #fff;
+        transition: all 1s;
+        text-align: center;
+    }
+    .card_port:hover{
+        cursor: pointer;
+        transform: var(--animacion-botones);
+        transition: .5s all;
+    }
+    .img_port{
+        border-radius: 20px 20px 0 0;
+        width: 100%;
+        height: 80%;
+    }
+    .card_port h1{
+        padding: 10px;
+    }
 /* --- Apartado de Contáctanos --- */
+.container_contact{
+    display: flex;
+    height: 80vh;
+    width: 100%;
 
-
+}
 /* 
 ----RESPONSIVE----
  */
