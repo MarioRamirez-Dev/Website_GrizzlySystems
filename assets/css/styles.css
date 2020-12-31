@@ -511,13 +511,20 @@ body.menu_fixed .logo_small{
     width: 30%;
     align-items: center;
 }
-
+/* ----Estilos para los botones de los includes---- */
+    .btn_down, .btn_reload{
+        background: var(--ColorPrincipal);
+        border-radius: 50%;
+        box-shadow: var(--Sombras);
+        padding: 15px;
+    }
 /* ---- Apartado de Contáctanos ---- */
 .container_contact{
     display: flex;
     height: 80vh;
     width: 100%;
 }
-/* 
-----RESPONSIVE----
- */
+
+/*--------------------
+------RESPONSIVE------
+--------------------*/
