@@ -340,6 +340,22 @@ body.menu_fixed .logo_small{
     justify-content: space-around;
     padding: 3vh;
 }
+    .card_port h1{
+        margin: 15px 0 10px 0;
+        padding: 10px;
+    }
+    .view_more{
+        position: absolute;
+        z-index: 1;
+        opacity: 0;
+        bottom: 100%;
+        height: inherit;
+        width: 100%;
+        height: 100%;
+        background: #111111;
+        padding: 0;
+        
+    }
     .card_port{
         margin-top: 20px;
         display: flex;
@@ -352,20 +368,25 @@ body.menu_fixed .logo_small{
         color: #fff;
         transition: all 1s;
         text-align: center;
+        overflow: hidden;
     }
     .card_port:hover{
         cursor: pointer;
         transform: var(--animacion-botones);
         transition: .5s all;
     }
+    .card_port:hover .view_more{
+        transition: ease .5s ;
+        opacity: .70 ;
+        bottom: 0%;
+        padding: 30vh 0 0 0;
+    }
     .img_port{
         border-radius: 20px 20px 0 0;
         width: 100%;
         height: 80%;
     }
-    .card_port h1{
-        padding: 10px;
-    }
+
 
 /* Estilos para el apartado de includes */
 .container_intern_portfolio1{
@@ -387,7 +408,7 @@ body.menu_fixed .logo_small{
         z-index: 1;
     }
     .right_1{
-        margin: 11vh 0 0 0;
+        margin: 10vh 0 0 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -398,8 +419,100 @@ body.menu_fixed .logo_small{
     .title_include{
         font-size: 8vh;
         text-align: center;
+        background: var(--ColorPrincipal);
+        color: var(--FontColorWhite);
+        border-radius: 30px;
+        box-shadow: var(--Sombras);
     }
-/* --- Apartado de Contáctanos --- */
+    .second_container_intern, .third_container_intern{
+        margin: 50px 0 0 0;
+        width: 100%;
+        height: 90vh;
+        display: flex;
+    }
+    /* ----Contenedor del slider que se muestra en la información detallada del portafolio ---- */
+    .slider{
+        width: 60%;
+        height: 70vh;
+        margin: 2% 0 0 2%;
+        overflow: hidden;
+        border-radius: 20px;
+        box-shadow: var(--Sombras);
+    }
+    .slider ul{
+        display: flex;
+        padding: 0;
+        width: 400%;
+        height: 100%;
+        animation: change 20s infinite alternate;
+        }
+        @keyframes change{
+            0%{margin-left: 0;}
+            20%{margin-left: 0;}
+            25%{margin-left: -100%;}
+            45%{margin-left: -100%;}
+            50%{margin-left: -200%;}
+            70%{margin-left: -200%;}
+            75%{margin-left: -300%;}
+            100%{margin-left: -300%;}
+        }
+    .slider li{
+        width: 100%;
+        list-style: none;
+    }
+    .slider img{
+        width: 100%;
+        height: 100%;
+    }
+.info_functions h1{
+    background: var(--ColorPrincipal);
+    border-radius: 20px;
+    height: 15%;
+    color: var(--FontColorWhite);
+    box-shadow: var(--Sombras);
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.info_functions{
+    margin: 5% 0 0 5% ;
+}
+    .info_functions ul li{
+        padding: 10px;
+        list-style: none;
+    }
+ /* ---- Contenedor donde se encuentra la ubicación del negocio ---- */
+.third_container_intern{
+    flex-direction: row-reverse;
+}
+.mapa{
+    width: 70%;
+    height: 90%;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--Sombras);
+}
+.txt_map h1{
+    background: var(--ColorPrincipal);
+    color: var(--FontColorWhite);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    height: 10%;
+    box-shadow: var(--Sombras);
+}
+    .txt_map p{
+        padding: 5%;
+    }
+.txt_map{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 30%;
+    align-items: center;
+}
+
+/* ---- Apartado de Contáctanos ---- */
 .container_contact{
     display: flex;
     height: 80vh;
