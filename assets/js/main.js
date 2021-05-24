@@ -9,12 +9,12 @@ $(window).scroll(function(){
     }
 });
 
-//Slider Portafolio
-var counter = 1;
-setInterval(function(){
-document.getElementById('radio' + counter).checked = true;
-counter++;
-if(counter > 4){
-    counter = 1;
-}
-}, 3000);
+//Funcionamiento del boton de menu
+$('.btn_menu').on('click',function(){
+    $('.nav').toggleClass('nav-toggle');
+});
+//Boton Hamburguesa del menu
+document.getElementById('hamburguer_menu')
+.addEventListener('click', ({ target }) => {
+    target.classList.toggle('open')
+})

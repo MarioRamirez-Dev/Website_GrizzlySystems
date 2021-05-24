@@ -84,10 +84,6 @@ body.menu_fixed .logo_small{
         
     }
 /* ---- Menú responsive ---- */
-.menu_responsive{
-    width: 100%;
-    display: hide;
-}
 .btn_menu {
     display: none;
     top: 12px;
@@ -528,3 +524,6 @@ body.menu_fixed .logo_small{
 /*--------------------
 ------RESPONSIVE------
 --------------------*/
+@media screen and (max-width: 1100px ){
+    
+}
